@@ -463,7 +463,8 @@ def gameLoop(window,horloge) :
         #redessinage de la page
         gameState.draw()
 
-
+        if(gameState.isOver()) :
+            
             string_score = "Votre score est de : " + str(gameState.score)
             displayMessage(window, string_score,50,GameConfig.windowW/2,GameConfig.windowH/2-50, GameConfig.red)
             displayMessage(window,"Appuyer sur ENTRE pour rejouer",30,GameConfig.windowW/2,GameConfig.windowH/2, GameConfig.blue)
