@@ -464,7 +464,7 @@ def gameLoop(window,horloge) :
         gameState.draw()
 
         if(gameState.isOver()) :
-            
+
             string_score = "Votre score est de : " + str(gameState.score)
             displayMessage(window, string_score,50,GameConfig.windowW/2,GameConfig.windowH/2-50, GameConfig.red)
             displayMessage(window,"Appuyer sur ENTRE pour rejouer",30,GameConfig.windowW/2,GameConfig.windowH/2, GameConfig.blue)
@@ -483,16 +483,13 @@ def gameLoop(window,horloge) :
 
 
 def playAgain() :
-    time.sleep(1)
+    time.sleep(2)
     while True :
         for event in pygame.event.get() :
-            if event.type == pygame.QUIT or pygame.key.get_pressed()[pygame.K_ESCAPE] :
+            if event.type == pygame.QUIT or pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 return False
-            elif pygame.key.get_pressed()[pygame.K_SPACE] or pygame.key.get_pressed()[pygame.K_ENTER]:
+            elif pygame.key.get_pressed()[pygame.K_RETURN] :
                 return True
-            
-            else :
-                time.sleep(0.5)
  
 
 def displayMessage(window, text, fontSize, x, y, color) :
