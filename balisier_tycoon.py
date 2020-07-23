@@ -75,10 +75,6 @@ class GameConfig :     #DECLARATION DE TOUTES LES CONSTANTES ET IMPORTATIONS DES
     simon_image = pygame.image.load('image/simon.png')
  
  
-    pygame.mixer.init(frequency=8000, size=16, channels=1)
-
-    sonTheme = pygame.mixer.Sound("sound/wiiSportResort.wav")
- 
  
 class Plant : #mauvaise herbe ou melon
     def __init__(self, type, rang) :
@@ -438,15 +434,12 @@ def gameLoop(window,horloge) :
     game_over = False
     pygame.key.set_repeat(10,100)
  
-    #sontheme = GameConfig.sonTheme #MUSIC DE JEU
-    #sontheme.play()
  
     while not game_over :
         nextMove=0
       
         for event in pygame.event.get() :
             if event.type == pygame.QUIT :
-                sontheme.stop()
                 game_over = True
 
             if pygame.key.get_pressed()[pygame.K_LEFT] : #aller à gauche
@@ -470,11 +463,6 @@ def gameLoop(window,horloge) :
         #redessinage de la page
         gameState.draw()
 
-        if(gameState.isOver()) :
-            try:
-                sontheme.stop()
-            except :
-                print("Sound not found")
 
             string_score = "Votre score est de : " + str(gameState.score)
             displayMessage(window, string_score,50,GameConfig.windowW/2,GameConfig.windowH/2-50, GameConfig.red)

@@ -1,6 +1,5 @@
-Pour activer ou désactiver le bot, modifier la ligne 498 :
-IA=True = bot activer
-
-Pour le bien de vos oreille vous pouvez désactiver le son
-
-Bon jeu
+Le but du jeu est de faire le meilleur score avant d'atteindre la fin du champ.
+Ramasser un bon melon rapporte des points en ramasser un mauvais en retire.
+Retirer un melon pas mur rapporte des points en retirer un mauvais en retire.
+Il faut vider votre baquet quand celui ci est plein.
+Si vous touchez une mauvaise herbe, vous perdez des points.
