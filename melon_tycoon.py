@@ -1,17 +1,9 @@
 import pygame
 import time
-import math
-import numpy
-from random import *
+import random
  
  
 class GameConfig :     #DECLARATION DE TOUTES LES CONSTANTES ET IMPORTATIONS DES IMAGES ET SONS
-
-    #largeur du personnage : 80
-    #coté Plant : 50
-    #largeur melonnière : 100
-    #espace entre melonière : 50
- 
 
     windowW=1000
     windowH=800
@@ -324,12 +316,12 @@ class GameState : #Instance de jeu
         if self.avancement > self.newSpawn :
             self.newSpawn = self.newSpawn + self.intervalSpawn
             
-            type = randint(1,12)
-            rand1 = randint(1,5)
-            rand2 = randint(1,5)
+            type = random.randint(1,12)
+            rand1 = random.randint(1,5)
+            rand2 = random.randint(1,5)
 
             if rand2 == rand1 :
-                change = randint(1,2)
+                change = random.randint(1,2)
                 if change == 1 and rand2 > 1 :
                     rand2 = rand2 - 1
                 elif rand2 < 5 :
